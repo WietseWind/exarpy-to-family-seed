@@ -36,7 +36,6 @@
 <script>
 import Vue from 'vue'
 import VueClipboard from 'vue-clipboard2'
-// import XrplKeyPairs from 'ripple-keypairs'
 import { generateSeed, deriveKeypair, deriveAddress } from 'ripple-keypairs'
 
 Vue.use(VueClipboard)
@@ -68,10 +67,7 @@ export default {
   },
   computed: {
     valid () {
-      if (this.secret.filter(s => String(s).trim().match(/^[0-9]{1,3}$/g)).length === 16) {
-        return true
-      }
-      return false
+      return this.secret.filter(s => String(s).trim().match(/^[0-9]{1,3}$/g)).length === 16
     }
   }
 }
